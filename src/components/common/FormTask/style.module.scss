@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 0 #00000081;
+    margin-bottom: 20px;
+}
+
+textarea {
+    resize: none;
+}

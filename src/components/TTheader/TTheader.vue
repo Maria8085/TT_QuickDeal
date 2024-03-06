@@ -1,12 +1,10 @@
 <script lang="ts">
 import Styles from './style.module.scss';
-import useCartStore from '@/stores/cart';
 
 export default {
   data() {
     return {
-      Styles,
-      cartStore: useCartStore()
+      Styles
     };
   }
 };
@@ -14,7 +12,7 @@ export default {
 
 <template>
   <header :class="Styles.header">
-    <RouterLink to="/"></RouterLink>
-    <RouterLink to="/"></RouterLink>
+    <RouterLink to="/">Главная</RouterLink>
+    <RouterLink to="/todos">Список</RouterLink>
   </header>
 </template>
