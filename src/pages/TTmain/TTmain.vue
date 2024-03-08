@@ -12,7 +12,7 @@ export default {
 
 <template>
   <main>
-    <div :class="Styles.main">
+    <div class="container">
       <RouterLink to="/todos">Список задач</RouterLink>
     </div>
   </main>

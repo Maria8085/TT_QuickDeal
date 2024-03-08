@@ -16,11 +16,12 @@ export const useTaskStore = defineStore('taskStore', {
     };
   },
   actions: {
-    taskAdd(task: Omit<Task, 'date' | 'id'>) {
+    taskAdd(task: Omit<Task, 'date' | 'id' | 'make'>) {
       const newTask: Task = {
         ...task,
         date: new Date(),
-        id: new Date().getTime()
+        id: new Date().getTime(),
+        isDone: false
       };
       this.tasks = [...this.tasks, newTask];
     },
@@ -36,6 +37,16 @@ export const useTaskStore = defineStore('taskStore', {
     },
     taskDelete(id: number) {
       this.tasks = this.tasks.filter((task) => task.id !== id);
+    },
+    taskMake(id: number, isDone: boolean) {
+      const index = this.tasks.findIndex((t) => t.id === id);
+      if (id < 0) return;
+      const task = this.tasks[index];
+      const newTask: Task = {
+        ...task,
+        isDone: !task.isDone
+      };
+      this.tasks = this.tasks.toSpliced(index, 1, newTask);
     }
   }
 });

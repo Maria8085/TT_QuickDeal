@@ -28,9 +28,13 @@ export default {
 </script>
 
 <template>
-  <form :class="Styles.form" @submit="submitTask">
-    <label>Название задачи <input type="text" v-model="title" /></label>
-    <label>Описание задачи <textarea v-model="description" /></label>
-    <button type="submit" @click="submitTask">Создать</button>
+  <form :class="[Styles.form, 'qd-shadow']" @submit="submitTask">
+    <label :class="Styles.label"
+      >Название задачи <input type="text" placeholder="Задача..." class="qd-input" v-model="title"
+    /></label>
+    <label :class="Styles.label"
+      >Описание задачи <textarea class="qd-input" placeholder="Описание..." v-model="description" />
+    </label>
+    <button :class="[Styles.button, 'qd-button']" type="submit" @click="submitTask">Создать</button>
   </form>
 </template>

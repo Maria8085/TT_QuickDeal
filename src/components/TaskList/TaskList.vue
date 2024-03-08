@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div :class="Styles.taskList">
     <h2>Список задач</h2>
     <div v-if="taskStore.tasks.length > 0">
       <CardTask v-for="item in taskStore.tasks" :task="item" />

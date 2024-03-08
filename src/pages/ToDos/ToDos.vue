@@ -18,7 +18,7 @@ export default {
 
 <template>
   <main>
-    <div :class="Styles.main">
+    <div class="container">
       <FormTask />
       <TaskList />
     </div>

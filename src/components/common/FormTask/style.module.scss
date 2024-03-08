@@ -3,10 +3,23 @@
     flex-direction: column;
     gap: 15px;
     padding: 20px;
-    box-shadow: 1px 1px 5px 0 #00000081;
     margin-bottom: 20px;
+    border-radius: 20px;
 }
 
-textarea {
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.label textarea {
     resize: none;
+    height: 100px;
+}
+
+.button {
+    align-self: flex-end;
 }
