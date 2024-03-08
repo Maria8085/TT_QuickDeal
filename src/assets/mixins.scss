@@ -19,3 +19,12 @@ $Desktop: 1366px;
     @content;
   }
 }
+
+@mixin ActiveState {
+  outline-color: #8888;
+}
+
+@mixin InnerShadowBig {
+  box-shadow: inset -3px -3px 6px 0px #fff8,
+  inset 3px 3px 6px 0px #00000033;
+}

@@ -1,8 +1,10 @@
 <script lang="ts">
 import { useTaskStore } from '../../../stores/task';
 import Styles from './style.module.scss';
+import BaseSeparator from '@/components/ui/Separator/BaseSeparator.vue';
 
 export default {
+  components: { BaseSeparator },
   data() {
     return {
       Styles,
@@ -17,7 +19,8 @@ export default {
       if (this.title.length > 0 && this.description.length > 0) {
         this.taskStore.taskAdd({
           title: this.title,
-          description: this.description
+          description: this.description,
+          isDone: false
         });
       }
       this.title = '';
@@ -35,6 +38,7 @@ export default {
     <label :class="Styles.label"
       >Описание задачи <textarea class="qd-input" placeholder="Описание..." v-model="description" />
     </label>
+    <BaseSeparator />
     <button :class="[Styles.button, 'qd-button']" type="submit" @click="submitTask">Создать</button>
   </form>
 </template>

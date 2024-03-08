@@ -1,31 +1,34 @@
 <script lang="ts" setup>
 import type { Task } from '@/types.ts';
+import BaseCheckbox from '@/components/ui/Checkbox/BaseCheckbox.vue';
 import Styles from './style.module.scss';
 import { useTaskStore } from '@/stores/task';
 
 const props = defineProps<{ task: Task }>();
 const newTitle = defineModel('title', { type: String, default: '' });
-const newDescr = defineModel('description', { type: String, default: '' });
+const newDescription = defineModel('description', { type: String, default: '' });
 const checked = defineModel('checked', { type: Boolean, default: false });
 let isEdit: boolean = false;
 const taskStore = useTaskStore();
 
 newTitle.value = props.task.title;
-newDescr.value = props.task.description;
+newDescription.value = props.task.description;
 checked.value = props.task.isDone;
 
 function deleteTask() {
   taskStore.taskDelete(props.task.id);
 }
+
 function editTask() {
   taskStore.taskEdit({
     id: props.task.id,
-    description: newDescr.value,
+    description: newDescription.value,
     title: newTitle.value,
     isDone: checked.value
   });
   isEdit = !isEdit;
 }
+
 function taskMake() {
   taskStore.taskMake(props.task.id, checked.value);
 }
@@ -33,13 +36,7 @@ function taskMake() {
 
 <template>
   <div :class="[Styles.task, 'qd-shadow']">
-    <label
-      ><input
-        type="checkbox"
-        @click="taskMake"
-        v-model="checked"
-        :class="[Styles.checkbox, 'qd-input']"
-    /></label>
+    <BaseCheckbox label="Статус готовности" v-model="checked" @on-change="taskMake" />
     <label :class="Styles.label">
       Задача:
       <input class="qd-input" v-if="isEdit" type="text" v-model="newTitle" />
@@ -47,7 +44,7 @@ function taskMake() {
     </label>
     <label :class="Styles.label">
       Описание:
-      <input class="qd-input" v-if="isEdit" type="text" v-model="newDescr" />
+      <input class="qd-input" v-if="isEdit" type="text" v-model="newDescription" />
       <span v-else>{{ task.description }}</span>
     </label>
     <div :style="{ display: 'flex', gap: '16px' }">

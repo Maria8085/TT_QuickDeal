@@ -1,7 +1,9 @@
 <script lang="ts">
 import Styles from './style.module.scss';
+import BaseSeparator from '@/components/ui/Separator/BaseSeparator.vue';
 
 export default {
+  components: { BaseSeparator },
   data() {
     return {
       Styles
@@ -12,7 +14,10 @@ export default {
 
 <template>
   <header :class="Styles.header">
-    <RouterLink to="/">Главная</RouterLink>
-    <RouterLink to="/todos">Список</RouterLink>
+    <nav :class="Styles.nav">
+      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/">Главная</RouterLink>
+      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/todos">Список</RouterLink>
+    </nav>
+    <BaseSeparator />
   </header>
 </template>
