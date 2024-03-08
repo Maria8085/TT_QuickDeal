@@ -1,0 +1,79 @@
+@import '@/assets/mixins.scss';
+
+.developers {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.mainDeveloper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .develsoperSocial {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.team {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+
+    .developer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@include Tablet {
+    .info {
+        flex-direction: row;
+    }
+
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include Laptop {
+    .team {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

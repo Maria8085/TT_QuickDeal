@@ -15,8 +15,16 @@
   border-radius: 5px;
   transition: 0.15s ease-out;
   text-decoration: none;
+
+  &:hover {
+    @include InnerShadowSmall;
+  }
 }
 
 .active {
   @include InnerShadowBig;
+
+  &:hover {
+    @include InnerShadowBig;
+  }
 }

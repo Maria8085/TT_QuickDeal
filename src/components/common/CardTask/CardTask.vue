@@ -36,23 +36,27 @@ function taskMake() {
 
 <template>
   <div :class="[Styles.task, 'qd-shadow']">
-    <BaseCheckbox label="Статус готовности" v-model="checked" @on-change="taskMake" />
-    <label :class="Styles.label">
-      Задача:
-      <input class="qd-input" v-if="isEdit" type="text" v-model="newTitle" />
-      <span v-else>{{ task.title }}</span>
-    </label>
-    <label :class="Styles.label">
-      Описание:
-      <input class="qd-input" v-if="isEdit" type="text" v-model="newDescription" />
-      <span v-else>{{ task.description }}</span>
-    </label>
-    <div :style="{ display: 'flex', gap: '16px' }">
-      <button type="button" class="qd-button" @click="deleteTask">Удалить</button>
+    <div :class="Styles.bodyTask">
+      <BaseCheckbox v-model="checked" @on-change="taskMake" />
+      <div :class="Styles.text">
+        <label :class="Styles.label">
+          Задача:
+          <input class="qd-input" v-if="isEdit" type="text" v-model="newTitle" />
+          <span v-else>{{ task.title }}</span>
+        </label>
+        <label :class="Styles.label">
+          Описание:
+          <input class="qd-input" v-if="isEdit" type="text" v-model="newDescription" />
+          <span v-else>{{ task.description }}</span>
+        </label>
+      </div>
+    </div>
+    <div :class="Styles.buttons">
       <button type="button" class="qd-button" @click="editTask">
         <span v-if="isEdit">Изменить</span>
         <span v-else>Редактировать</span>
       </button>
+      <button type="button" class="qd-button" @click="deleteTask">Удалить</button>
     </div>
   </div>
 </template>

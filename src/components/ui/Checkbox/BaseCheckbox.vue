@@ -30,7 +30,7 @@ const handleClick = () => {
 
 <template>
   <label :class="Styles.label">
-    <span :id="`label-${props.id}`">
+    <span v-if="props.label" :id="`label-${props.id}`">
       {{ props.label }}
     </span>
     <input type="checkbox" v-model="checked" :class="Styles.input" tabindex="-1" />
