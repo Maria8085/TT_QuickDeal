@@ -15,8 +15,12 @@ export default {
 <template>
   <header :class="Styles.header">
     <nav :class="Styles.nav">
-      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/">Главная</RouterLink>
-      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/todos">Список</RouterLink>
+      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/TT_QuickDeal/"
+        >Главная</RouterLink
+      >
+      <RouterLink :class="Styles.link" :active-class="Styles.active" to="/TT_QuickDeal/todos"
+        >Список</RouterLink
+      >
     </nav>
     <BaseSeparator />
   </header>

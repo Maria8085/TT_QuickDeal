@@ -17,7 +17,7 @@ export default {
 <template>
   <main :class="Styles.main">
     <div :class="[Styles.container, 'container']">
-      <RouterLink to="/todos" :class="[Styles.buttonToList, 'qd-button']"
+      <RouterLink to="/TT_QuickDeal/todos" :class="[Styles.buttonToList, 'qd-button']"
         >Перейти к списку задач</RouterLink
       >
       <Developers />

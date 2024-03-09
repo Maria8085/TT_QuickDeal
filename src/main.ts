@@ -8,8 +8,8 @@ import App from './App.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: Main },
-    { path: '/todos', component: ToDos }
+    { path: '/TT_QuickDeal/', component: Main },
+    { path: '/TT_QuickDeal/todos', component: ToDos }
   ]
 });
 
