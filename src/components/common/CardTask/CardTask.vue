@@ -46,7 +46,7 @@ function taskMake() {
         </label>
         <label :class="Styles.label">
           Описание:
-          <input class="qd-input" v-if="isEdit" type="text" v-model="newDescription" />
+          <textarea class="qd-input" v-if="isEdit" type="text" v-model="newDescription" />
           <span v-else>{{ task.description }}</span>
         </label>
       </div>

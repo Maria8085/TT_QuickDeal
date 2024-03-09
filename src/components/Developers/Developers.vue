@@ -20,6 +20,8 @@ export default {
       <div :class="Styles.mainDeveloper">
         <p>Терёхина Мария</p>
         <p>Ведущий разработчик</p>
+        <a href="tel:+79278368377">+7 (927) 836-83-77</a>
+        <a href="mailto:tma8085@mail.ru">tma8085@mail.ru</a>
         <div :class="Styles.develsoperSocial">
           <a href="https://vk.com/id73243622" rel="nofollow" target="_blank">Вконтакте</a>
           <a href="https://t.me/MariaTerehina" rel="nofollow" target="_blank">Телеграмм</a>
