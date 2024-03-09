@@ -11,7 +11,7 @@
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build":"tsx && vite build",
+    "build":"tsc && vite build",
     // "build": "run-p \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
