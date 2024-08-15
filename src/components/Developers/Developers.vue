@@ -45,12 +45,12 @@ export default {
       <div :class="Styles.developer">
         <div :class="[Styles.image, 'qd-shadow']"><img src="/public/Арти.jpg" alt="" /></div>
         <p>Арти</p>
-        <p>Маладший фронтенд разработчик</p>
+        <p>Младший фронтенд разработчик</p>
       </div>
       <div :class="Styles.developer">
         <div :class="[Styles.image, 'qd-shadow']"><img src="/public/Санни.jpg" alt="" /></div>
         <p>Санни</p>
-        <p>Маладший фронтенд разработчик</p>
+        <p>Младший фронтенд разработчик</p>
       </div>
       <div :class="Styles.developer">
         <div :class="[Styles.image, 'qd-shadow']"><img src="/public/Лекса.jpg" alt="" /></div>
